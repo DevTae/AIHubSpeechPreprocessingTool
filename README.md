@@ -79,16 +79,19 @@
 
 8. 최종적으로 만들어진 `📄metadata.txt` 파일을 바탕으로 `KoSpeech` 혹은 `OpenSpeech` 등의 음성 모델 툴킷을 활용하여 학습을 진행할 수 있다.
 
+9. **(KoSpeech 및 OpenSpeech 한정)** `📦preprocess` 디렉토리에서 `bash preprocess.sh` 를 실행하여 만들어진 단어사전에 매핑한 최종 라벨 데이터를 생성할 수 있다.
+
+    - 만약, 오류가 난다면 `pip install -r requirements.txt` 를 실행하도록 하자.
+
 <br/>
 
 - AI-Hub 를 활용하여 음성 딥러닝 프로젝트를 진행할 때, 매번 똑같은 과정을 진행하던 중 반복되는 수작업을 줄이기 위하고자 해당 코드들을 작성하게 되었고, 저와 비슷한 사람들에게 도움이 되고자 업로드하게 되었습니다.
-
-  7. **(KoSpeech 및 OpenSpeech 한정)** `📦preprocess` 디렉토리에서 `bash preprocess.sh` 를 실행하여 만들어진 단어사전에 매핑한 최종 라벨 데이터를 생성할 수 있다.
-
-      - 만약, 오류가 난다면 `pip install -r requirements.txt` 를 실행하도록 하자.
 
 <br/>
 
 #### 참조
 
 - [명령어 인식을 위한 소음 환경 데이터](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=71405)
+- [sooftware/kospeech](https://github.com/sooftware/kospeech)
+- [stannam/hangul_to_ipa](https://github.com/stannam/hangul_to_ipa)
+  
