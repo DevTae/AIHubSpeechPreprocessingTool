@@ -12,6 +12,7 @@
   
   ```
   📦AIHubSpeechPreprocessingTool
+   ┣ 📂preprocess
    ┣ 📂135.명령어_인식을_위한_소음_환경_데이터
    ┃ ┣ 📂01.데이터
    ┃ ┃ ┣ 📂Training
@@ -81,6 +82,10 @@
 <br/>
 
 - AI-Hub 를 활용하여 음성 딥러닝 프로젝트를 진행할 때, 매번 똑같은 과정을 진행하던 중 반복되는 수작업을 줄이기 위하고자 해당 코드들을 작성하게 되었고, 저와 비슷한 사람들에게 도움이 되고자 업로드하게 되었습니다.
+
+  7. **(KoSpeech 및 OpenSpeech 한정)** `📦preprocess` 디렉토리에서 `bash preprocess.sh` 를 실행하여 만들어진 단어사전에 매핑한 최종 라벨 데이터를 생성할 수 있다.
+
+      - 만약, 오류가 난다면 `pip install -r requirements.txt` 를 실행하도록 하자.
 
 <br/>
 
