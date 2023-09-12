@@ -69,7 +69,6 @@ def generate_ipa_labels(transcripts, labels_dest):
                         break
                 if skip == True:
                     idx += 1
-                    continue
             else:
                 idx += 1
 
