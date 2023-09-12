@@ -42,6 +42,9 @@ def _get_parser():
     parser.add_argument('--vocab_size', type=int,
                         default=5000,
                         help='size of vocab (default: 5000)')
+    parser.add_argument('--lang', type=str,
+                        default='kor_ipa',
+                        help='type of language')
 
     return parser
 
@@ -59,7 +62,7 @@ def main():
     opt = parser.parse_args()
     log_info(opt)
 
-    audio_paths, transcripts = preprocess(opt.dataset_path, opt.preprocess_mode)
+    audio_paths, transcripts = preprocess(opt.dataset_path, opt.preprocess_mode, opt.lang)
 
     if opt.output_unit == 'character':
         generate_character_labels(transcripts, opt.vocab_dest)

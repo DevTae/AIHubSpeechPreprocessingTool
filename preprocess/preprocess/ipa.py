@@ -99,5 +99,4 @@ def generate_ipa_script(audio_paths, transcripts, labels_dest):
     with open(os.path.join("transcripts.txt"), "w") as f:
         for audio_path, transcript in zip(audio_paths, transcripts):
             ipa_id_transcript = sentence_to_target(transcript, ipa2id)
-            audio_path = audio_path.replace('txt', 'pcm')
             f.write(f'{audio_path}\t{transcript}\t{ipa_id_transcript}\n')

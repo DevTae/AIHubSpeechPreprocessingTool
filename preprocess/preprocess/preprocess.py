@@ -73,7 +73,7 @@ def sentence_filter(raw_sentence, mode, replace=None):
     return special_filter(bracket_filter(raw_sentence, mode), mode, replace)
 
 
-def preprocess(dataset_path, mode='phonetic', lang='ipa'):
+def preprocess(dataset_path, mode='phonetic', lang='kor_ipa'):
     print('preprocess started..')
 
     audio_paths = list()
@@ -99,12 +99,12 @@ def preprocess(dataset_path, mode='phonetic', lang='ipa'):
 
                 audio_paths.append(audio_path)
 
-                if lang == 'kor':
+                if lang == 'kor' or lang == 'eng':
                     transcripts.append(sentence)
-                elif lang == 'eng':
-                    pass
-                elif lang == 'ipa':
+                elif lang == 'kor_ipa':
                     transcripts.append(ipa_converter.applyRulesToHangulTotal(sentence)) # ipa_convert 이용 시 위 코드 주석한 후 해당 코드 주석 해제
+                elif lang == 'eng_ipa':
+                    pass
 
             except:
                 print(audio_path)
