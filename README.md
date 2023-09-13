@@ -4,6 +4,8 @@
 
 <br/>
 
+- 실행 환경 : Ubuntu 20.04
+
 - 다음 과정으로 진행하면 전처리를 쉽게 완료할 수 있다.
 
   - 실제 데이터셋을 예시로 들어 설명하고자 한다.
@@ -35,13 +37,14 @@
    ┣ 📄1.make_extract_all_sh.py
    ┣ 📄2.make_metadata_each.py
    ┣ 📄3.make_metadata_total.py
+   ┣ 📄4.make_metadata_total_balanced.py
    ┣ 📄extract_all.sh
    ┗ 📄README.md
   ```
 
 <br/>
 
-1. 다음과 같이 `1.make_extract_all_sh.py` 파일과 `2.make_metadata_total.py` 파일, 그리고 `3.make_metadata_total.py` 파일을 모두 제 위치에 맞게 위치한다.
+1. 다음과 같이 `1.make_extract_all_sh.py` 파일과 `2.make_metadata_total.py` 파일과 `3.make_metadata_total.py` 파일, 그리고 `4.make_metadata_total_balanced.py` 파일을 모두 제 위치에 맞게 위치한다.
 
 2. `$ cd AIHubSpeechPreprocessingTool`
 
@@ -77,9 +80,13 @@
 
     - 그 결과, 모든 내용이 합쳐진 `📄metadata.txt` 파일을 만들어낼 수 있다.
 
-8. 최종적으로 만들어진 `📄metadata.txt` 파일을 바탕으로 `KoSpeech` 혹은 `OpenSpeech` 등의 음성 모델 툴킷을 활용하여 학습을 진행할 수 있다.
+8.  `📦AIHubSpeechPreprocessingTool` 디렉토리에서 `python 4.make_metadata_total_balanced.py metadata.txt` 를 실행한다.
 
-9. **(KoSpeech 및 OpenSpeech 한정)** `📦preprocess` 디렉토리에서 `bash preprocess.sh` 를 실행하여 만들어진 단어사전에 매핑한 최종 라벨 데이터를 생성할 수 있다.
+    - 추가적으로, `📄metadata.txt` 에서 다양한 데이터셋이 `균등 분포` 를 이룰 수 있도록 데이터 선정 알고리즘을 적용한다.
+
+9. 최종적으로 만들어진 `📄metadata.txt` 파일을 바탕으로 `KoSpeech` 혹은 `OpenSpeech` 등의 음성 모델 툴킷을 활용하여 학습을 진행할 수 있다.
+
+10. **(KoSpeech 및 OpenSpeech 한정)** `📦preprocess` 디렉토리에서 `bash preprocess.sh` 를 실행하여 만들어진 단어사전에 매핑한 최종 라벨 데이터를 생성할 수 있다.
 
     - 만약, 오류가 난다면 `pip install -r requirements.txt` 를 실행하도록 하자.
 
