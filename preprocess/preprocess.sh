@@ -14,8 +14,8 @@ echo "Pre-process Speech Dataset.."
 
 python main.py \
 --dataset_path $DATASET_PATH \
---vocab_dest $VOCAB_DEST \
---savepath $SAVE_PATH \
+--vocab_dest $DATASET_PATH \
+--savepath $DATASET_PATH \
 --output_unit $OUTPUT_UNIT \
 --preprocess_mode $PREPROCESS_MODE \
 --vocab_size $VOCAB_SIZE \
