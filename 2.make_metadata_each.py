@@ -46,6 +46,7 @@ def get_audio_path_and_transcript_from_label_path(label_path):
     
     # audio path 정의
     audio_path = label_path.replace("TL", "TS")
+    audio_path = audio_path.replace("VL", "VS")
     audio_path = audio_path.replace("02.라벨링데이터", "01.원천데이터")
     audio_path = os.path.dirname(audio_path)
     audio_path = os.path.join(audio_path, content['file']['name'])
