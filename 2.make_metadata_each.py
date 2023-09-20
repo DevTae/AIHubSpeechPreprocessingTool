@@ -56,6 +56,12 @@ def get_audio_path_and_transcript_from_label_path(label_path):
     audio_path_s = audio_path.replace(".wav", "-S.wav")
         
     transcript = content['command']['text']
+
+    # Sampling Rate 및 오디오 길이 확인하는 과정 (제외 프로세스)
+    if content['file']['length'] != content['file']['speechLength']:
+        return None, None, None
+    elif content['file']['samplingRate'] != '16kHz':
+        return None, None, None
     
     # 해당 부분 audio_path 를 2 개 반환하도록 수정할 수 있음
     return audio_path_n, audio_path_s, transcript
